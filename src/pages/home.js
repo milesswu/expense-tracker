@@ -1,9 +1,11 @@
 import React from "react"
+import { Typography, Button } from "@material-ui/core"
 
 function HomePage() {
 	return (
 		<>
-			<h1>Hello, World</h1>
+			<Typography variant="h1">Hello, World</Typography>
+			<Button>Test Button</Button>
 		</>
 	)
 }

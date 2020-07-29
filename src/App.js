@@ -1,16 +1,17 @@
-import React from "react";
-import Routes from "./pages/routes";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from "react"
+import { BrowserRouter as Router } from "react-router-dom"
 import {
 	MuiThemeProvider,
 	createMuiTheme,
 	responsiveFontSizes,
-} from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+} from "@material-ui/core/styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
+
+import Routes from "./pages/routes"
 
 const overwrittenTheme = responsiveFontSizes(
-	createMuiTheme(), // TODO: Create custom theme object
-);
+	createMuiTheme() // TODO: Create custom theme object
+)
 
 function App() {
 	return (
@@ -20,7 +21,7 @@ function App() {
 				<Routes />
 			</Router>
 		</MuiThemeProvider>
-	);
+	)
 }
 
-export default App;
+export default App

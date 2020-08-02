@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router } from "react-router-dom"
+
 import {
 	MuiThemeProvider,
 	createMuiTheme,
@@ -7,6 +8,8 @@ import {
 } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 
+import { Provider as StoreProvider } from "react-redux"
+import store from "./store"
 import Routes from "./pages/routes"
 
 const overwrittenTheme = responsiveFontSizes(
@@ -15,12 +18,14 @@ const overwrittenTheme = responsiveFontSizes(
 
 function App() {
 	return (
-		<MuiThemeProvider theme={overwrittenTheme}>
-			<CssBaseline />
-			<Router>
-				<Routes />
-			</Router>
-		</MuiThemeProvider>
+		<StoreProvider store={store}>
+			<MuiThemeProvider theme={overwrittenTheme}>
+				<CssBaseline />
+				<Router>
+					<Routes />
+				</Router>
+			</MuiThemeProvider>
+		</StoreProvider>
 	)
 }
 
